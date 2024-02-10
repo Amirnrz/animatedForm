@@ -24,6 +24,7 @@ form {
   padding: 3rem 5rem;
   box-shadow: 0 0 10px skyblue;
   display: flex;
+  position: relative;
 
   .title {
     color: #6391e8;
@@ -81,8 +82,10 @@ form {
     display: flex;
     
     .checkbox {
+      position: relative;
       opacity: 0;
       cursor: pointer;
+      z-index: 4;
     }
 
     .checkbox-label {
@@ -118,7 +121,7 @@ form {
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%), scale(0.6);
+      transform: translate(-50%, -50%) scale(0.6);
       z-index: 2;
     }
   }
@@ -135,4 +138,44 @@ form {
     align-self: start;
   }
 
+  #character {
+    position: absolute;
+    transform: scale(0.7) translate(22%, 30%);
+    transform-origin: bottom;
+    bottom: 0;
+    left: 0;
+  }
+
+  .submitted {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    color: #777474;
+    font-size: 1rem;
+    pointer-events: none;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+  }
 }
+
+@media screen and (max-width: 812px) {
+  form {
+    width: 90vw;
+    min-height: 70vh;
+    flex-direction: column;
+    padding: 7rem 2rem;
+    align-items: center;
+  }
+
+  .line-svg {
+    width: 100%;
+  }
+
+  #character {
+    transform: scale(0.5) translate(-100px, 100px) !important;
+  }
+
+  
+}
+
